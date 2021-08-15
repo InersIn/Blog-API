@@ -4,19 +4,46 @@ API for Blog CRUD
 ## Instalation
 
 ### Setup Environment
-```python3 -m virtualenv .env```
+```sh
+python3 -m virtualenv .env
+```
 
-```source .env/bin/activate```
+```sh
+source .env/bin/activate
+```
 
-```git clone https://github.com/InersIn/Blog-API.git```
+```sh
+git clone https://github.com/InersIn/Blog-API.git
+```
 
-```cd Blog-API```
+```sh
+cd Blog-API
+```
 
-```pip3 install -r ./requirements.txt```
+```sh
+pip3 install -r ./requirements.txt
+```
 
 ### Import Database
+Database configuration for the API. file ```blog/settings.py```
+```py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Blog',       # Database name
+        'USER': 'admin',      # Database username
+        'PASSWORD': '',       # Database password default in file `database.sql` is empty
+        'HOST': 'localhost',  # Database host
+        'PORT': '3306'        # Database post
+    }
+}
+```
 
-```mysql -u admin -p Blog < database.sql``` // Make sure database Blog is exists
+```sh
+mysql -u admin -p Blog < database.sql #Make sure database name is same as `settings.py`
+```
 
 ### Run Application
-```./manage.py runserver```
+```sh
+./manage.py runserver
+```
